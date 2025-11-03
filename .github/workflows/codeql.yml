@@ -47,6 +47,6 @@ jobs:
 
     steps:
     - name: Build container
-      run: docker build -t go-web-server .
+      run: docker build -f Dockerfile -t go-web-server .
     - name: Run container
       run: docker run -p 8080:8080 -it --rm go-web-server
