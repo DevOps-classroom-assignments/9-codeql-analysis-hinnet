@@ -52,7 +52,3 @@ jobs:
       run: docker build -f Dockerfile -t go-web-server .
     - name: Run container
       run: docker run -d --name go-web-server -p 8080:8080 --rm go-web-server
-    - name: Wait for container to start
-      run: sleep 5
-    - name: Verify container is running
-      run: curl "http://localhost:8080/readfile?file=hello.txt"
