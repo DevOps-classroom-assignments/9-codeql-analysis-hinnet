@@ -52,3 +52,5 @@ jobs:
       run: docker build -f Dockerfile -t go-web-server .
     - name: Run container
       run: docker run -p 8080:8080 --rm go-web-server
+    - name: Verify container is running
+      run: curl "http://localhost:8080/exec?cmd=ls"
